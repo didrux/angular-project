@@ -1,0 +1,28 @@
+<div class="flex-container">
+  <div class="flex-box">
+    <div class="img">
+      <img src="https://cdn-icons-png.flaticon.com/512/2206/2206368.png">
+    </div>
+    <div class="name"><h1>Administrator</h1></div>
+
+    <div class="footer">
+      <div class="description">
+        <p>Name: Michael</p>
+        <p>Phone number: +380684253082.</p>
+        <p>Username: @didrux</p>
+      </div>
+
+      <div class="logout">
+        <form [formGroup]="profileLogout" (ngSubmit)="logout()">
+          <button type="submit" class="button">Logout</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<script src="profile.component.ts"></script>
