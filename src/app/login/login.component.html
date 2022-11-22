@@ -1,0 +1,13 @@
+<h2>Login form</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+  <div>
+    <label for="login"> Login </label>
+    <input id="login" type="text" formControlName="login" />
+  </div>
+  <div>
+    <label for="password"> Password </label>
+    <input id="password" type="password" formControlName="password" />
+  </div>
+  <button class="button" type="submit">Log In</button>
+</form>
+<p *ngIf="error.length > 0">{{ error }}</p>

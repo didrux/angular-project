@@ -12,6 +12,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { NewsComponent } from './news/news.component';
+import { AuthorizationGuard } from './authorization-guard.service';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -24,7 +27,13 @@ import { NewsComponent } from './news/news.component';
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'news', component: NewsComponent },
-    ])
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthorizationGuard],
+      },
+      { path: 'login', component: LoginComponent },
+    ]),
   ],
   declarations: [
     AppComponent,
@@ -34,10 +43,10 @@ import { NewsComponent } from './news/news.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    NewsComponent
+    NewsComponent,
+    ProfileComponent,
+    LoginComponent,
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

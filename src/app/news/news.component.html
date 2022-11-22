@@ -2,15 +2,12 @@
 
 <div class="flex-container">
   <div class="flex-item" *ngFor="let newsItem of news">
-
     <h3>
-        {{newsItem.name}}
+      {{ newsItem.name }}
     </h3>
 
-    <img src="{{newsItem.photo}}">
+    <img src="{{ newsItem.photo }}" />
 
-    <p>{{newsItem.description}}</p>
-
+    <p>{{ newsItem.description }}</p>
   </div>
 </div>
-

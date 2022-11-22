@@ -7,17 +7,15 @@ import { CartService } from '../cart.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  styleUrls: ['./product-details.component.css'],
 })
-
 export class ProductDetailsComponent implements OnInit {
-
   product: Product | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private cartService: CartService
-  ) { }
+  ) {}
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
@@ -30,9 +28,8 @@ export class ProductDetailsComponent implements OnInit {
     const productIdFromRoute = Number(routeParams.get('productId'));
 
     // Find the product that correspond with the id provided in route.
-    this.product = products.find(product => product.id === productIdFromRoute);
+    this.product = products.find(
+      (product) => product.id === productIdFromRoute
+    );
   }
-
 }
-
-

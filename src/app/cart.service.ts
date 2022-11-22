@@ -3,15 +3,10 @@ import { Product } from './products';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-
-  constructor(
-    private http: HttpClient
-  ) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   items: Product[] = [];
   /* . . . */
@@ -30,7 +25,9 @@ export class CartService {
   }
 
   getShippingPrices() {
-    return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
+    return this.http.get<{ type: string; price: number }[]>(
+      '/assets/shipping.json'
+    );
   }
 
   /* . . . */
